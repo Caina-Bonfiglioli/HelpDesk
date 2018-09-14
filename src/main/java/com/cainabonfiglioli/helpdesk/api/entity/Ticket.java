@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -27,7 +28,7 @@ public class Ticket {
 	
 	private StatusEnum status;
 	
-	private PriorityEnum pririty;
+	private PriorityEnum priority;
 	
 	@DBRef(lazy = true)
 	private User assignedUser;
@@ -36,6 +37,7 @@ public class Ticket {
 	
 	private String image;
 	
+	@Transient
 	private List<ChangeStatus> changes;
 
 	public String getId() {
@@ -86,12 +88,12 @@ public class Ticket {
 		this.status = status;
 	}
 
-	public PriorityEnum getPririty() {
-		return pririty;
+	public PriorityEnum getPriority() {
+		return priority;
 	}
 
-	public void setPririty(PriorityEnum pririty) {
-		this.pririty = pririty;
+	public void setPriority(PriorityEnum priority) {
+		this.priority = priority;
 	}
 
 	public User getAssignedUser() {
