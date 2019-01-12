@@ -276,7 +276,7 @@ public class TicketController {
         }
     }
 
-    @GetMapping(value = "/ssummary")
+    @GetMapping(value = "/summary")
     public ResponseEntity<Response<Summary>> findSummary(){
         Response<Summary> response = new Response<Summary>();
 
